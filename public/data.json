@@ -1,0 +1,123 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co.com/7JfkGmsT/lawyers1.jpg",
+      "name": "Adv. Rahim Uddin",
+      "speciality": "Criminal Law",
+      "experience": "10 years",
+      "licenseNumber": "BD-CR-1021",
+      "availableDays": ["Sunday", "Tuesday", "Thursday"],
+      "fee": "1500"
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co.com/mVS68xHp/lawyers2.jpg",
+      "name": "Adv. Kamal Hossain",
+      "speciality": "Family Law",
+      "experience": "7 years",
+      "licenseNumber": "BD-FL-2033",
+      "availableDays": ["Monday", "Wednesday", "Saturday"],
+      "fee": "1200"
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co.com/W4dqk79T/lawyers3.jpg",
+      "name": "Adv. Farhan Ahmed",
+      "speciality": "Corporate Law",
+      "experience": "9 years",
+      "licenseNumber": "BD-CL-3155",
+      "availableDays": ["Sunday", "Tuesday", "Friday"],
+      "fee": "2000"
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co.com/SXQrGp1x/lawyers4.jpg",
+      "name": "Adv. Saif Chowdhury",
+      "speciality": "Property Law",
+      "experience": "6 years",
+      "licenseNumber": "BD-PL-4187",
+      "availableDays": ["Monday", "Thursday", "Saturday"],
+      "fee": "1300"
+    },
+    {
+      "id": 5,
+      "image": "https://i.ibb.co.com/bjBd7mt3/lawyers5.jpg",
+      "name": "Adv. Imran Kabir",
+      "speciality": "Tax Law",
+      "experience": "11 years",
+      "licenseNumber": "BD-TX-5272",
+      "availableDays": ["Sunday", "Wednesday", "Friday"],
+      "fee": "1800"
+    },
+    {
+      "id": 6,
+      "image": "https://i.ibb.co.com/ynCW6fph/lawyers6.jpg",
+      "name": "Adv. Arif Hasan",
+      "speciality": "Labour Law",
+      "experience": "5 years",
+      "licenseNumber": "BD-LL-6345",
+      "availableDays": ["Tuesday", "Thursday", "Saturday"],
+      "fee": "1000"
+    },
+    {
+      "id": 7,
+      "image": "https://i.ibb.co.com/fV102MLy/lawyers7.jpg",
+      "name": "Adv. Nayeem Siddiqui",
+      "speciality": "Cyber Law",
+      "experience": "8 years",
+      "licenseNumber": "BD-CY-7402",
+      "availableDays": ["Monday", "Wednesday", "Friday"],
+      "fee": "1600"
+    },
+    {
+      "id": 8,
+      "image": "https://i.ibb.co.com/5hRWFdpJ/lawyers8.jpg",
+      "name": "Adv. Mahbub Alam",
+      "speciality": "Constitutional Law",
+      "experience": "12 years",
+      "licenseNumber": "BD-CON-8523",
+      "availableDays": ["Sunday", "Tuesday", "Thursday"],
+      "fee": "2200"
+    },
+    {
+      "id": 9,
+      "image": "https://i.ibb.co.com/ptX6jpC/lawyers9.jpg",
+      "name": "Adv. Zubair Rahman",
+      "speciality": "Immigration Law",
+      "experience": "4 years",
+      "licenseNumber": "BD-IM-9614",
+      "availableDays": ["Monday", "Wednesday", "Saturday"],
+      "fee": "1100"
+    },
+    {
+      "id": 10,
+      "image": "https://i.ibb.co.com/cqDPj24/lawyers10.jpg",
+      "name": "Adv. Shoaib Mirza",
+      "speciality": "Civil Law",
+      "experience": "9 years",
+      "licenseNumber": "BD-CIV-1075",
+      "availableDays": ["Sunday", "Tuesday", "Friday"],
+      "fee": "1500"
+    },
+    {
+      "id": 11,
+      "image": "https://i.ibb.co.com/HTFQSjWr/lawyers11.jpg",
+      "name": "Adv. Tanveer Huda",
+      "speciality": "International Law",
+      "experience": "6 years",
+      "licenseNumber": "BD-INT-1166",
+      "availableDays": ["Monday", "Thursday", "Saturday"],
+      "fee": "1700"
+    },
+    {
+      "id": 12,
+      "image": "https://i.ibb.co.com/rRQTNW3t/lawyers12.jpg",
+      "name": "Adv. Jalal Uddin",
+      "speciality": "Human Rights Law",
+      "experience": "10 years",
+      "licenseNumber": "BD-HR-1289",
+      "availableDays": ["Tuesday", "Thursday", "Friday"],
+      "fee": "1900"
+    }
+  ]
+  
