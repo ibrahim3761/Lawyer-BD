@@ -1,9 +1,12 @@
 import React from "react";
 import { TbMoodSad } from "react-icons/tb";
 import { useNavigate } from "react-router";
+import Nabvar from "../../Components/Header/Nabvar";
 const Error = () => {
   const navigate = useNavigate();
   return (
+    <>
+    <Nabvar></Nabvar>
     <div className="flex h-screen justify-center gap-6 items-center">
       <div className="p-5 card  card-xl shadow-sm flex flex-col justify-center gap-6 items-center bg-gray-100">
         <TbMoodSad size={200} />
@@ -13,12 +16,13 @@ const Error = () => {
         <button
           onClick={() => navigate(-1)}
           type="button"
-          class="btn btn-outline-primary"
+          className="btn btn-outline-primary"
         >
           Go Back Home
         </button>
       </div>
     </div>
+    </>
   );
 };
 
