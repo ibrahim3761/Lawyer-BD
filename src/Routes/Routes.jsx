@@ -7,6 +7,7 @@ import Error from '../Pages/Error/Error';
 import Home from '../Pages/Home/Home';
 import Blogs from '../Pages/Blogs/Blogs';
 import Contact from '../Pages/Contact/Contact';
+import LawyerDetails from '../Pages/LawyerDetails/LawyerDetails';
 
   export const router = createBrowserRouter([
     {
@@ -28,6 +29,7 @@ import Contact from '../Pages/Contact/Contact';
             {
                 path: "/lawyerDetails/:id",
                 loader: () => fetch("/data.json"),
+                Component:LawyerDetails,
             },
             {
                 path: "/blogs",

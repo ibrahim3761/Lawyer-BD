@@ -28,7 +28,7 @@ const Lawyer = ({ lawyer }) => {
               {status}
             </p>
             <p className="p-2 rounded-2xl bg-green-100 text-green-600">
-              {experience}
+              {experience} experience
             </p>
           </div>
             <h2 className="text-2xl text-start font-bold">{name}</h2>
