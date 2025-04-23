@@ -1,9 +1,7 @@
-import React from "react";
-import { TbMoodSad } from "react-icons/tb";
-import { Link} from "react-router";
-import Nabvar from "../../Components/Header/Nabvar";
-const Error = () => {
-  return (
+import React from 'react';
+import { Link } from 'react-router';
+const Contact = () => {
+    return (
     <>
     <Nabvar></Nabvar>
     <div className="flex h-screen justify-center gap-6 items-center">
@@ -21,7 +19,7 @@ const Error = () => {
       </div>
     </div>
     </>
-  );
+    );
 };
 
-export default Error;
+export default Contact;

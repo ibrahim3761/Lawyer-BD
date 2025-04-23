@@ -6,6 +6,7 @@ import Roots from '../Pages/Roots/Roots';
 import Error from '../Pages/Error/Error';
 import Home from '../Pages/Home/Home';
 import Blogs from '../Pages/Blogs/Blogs';
+import Contact from '../Pages/Contact/Contact';
 
   export const router = createBrowserRouter([
     {
@@ -16,17 +17,28 @@ import Blogs from '../Pages/Blogs/Blogs';
             {
                 index: true,
                 path: "/",
-                Component:Home
+                loader: () => new Promise(resolve => setTimeout(resolve, 150)),
+                Component:Home,
+                loader:()=> fetch("/data.json"),
             },
             {
                 path: "/my-bookings",
-               
+                
+            },
+            {
+                path: "/lawyerDetails/:id",
+                loader: () => fetch("/data.json"),
             },
             {
                 path: "/blogs",
-                loader:()=> fetch("blogs.json"),
+                loader:()=> fetch("/blogs.json"),
                 Component: Blogs,
-            }
+            },
+            {
+                path: "/contact-us",
+                loader: () => new Promise(resolve => setTimeout(resolve, 150)),
+                element:<Contact></Contact>,
+            },
         ]
     }
   ])
