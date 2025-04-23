@@ -4,7 +4,6 @@ import { Link } from "react-router";
 
 const Lawyer = ({ lawyer }) => {
   const {
-    id,
     name,
     image,
     speciality,
@@ -36,7 +35,7 @@ const Lawyer = ({ lawyer }) => {
             <h5 className="flex gap-2 items-center text-start"><PiTrademarkRegistered /> {licenseNumber}</h5>
 
           <div class="flex flex-col">
-            <Link to={`/lawyerDetails/${id}`}><button className="mt-2 cursor-pointer  lg:px-34 py-2 border border-blue-300 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition">
+            <Link to={`/lawyerDetails/${licenseNumber}`}><button className="mt-2 cursor-pointer p-2  lg:px-34 py-2 border border-blue-300 text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition">
               View Details
             </button></Link>
           </div>

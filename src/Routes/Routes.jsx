@@ -8,6 +8,7 @@ import Home from '../Pages/Home/Home';
 import Blogs from '../Pages/Blogs/Blogs';
 import Contact from '../Pages/Contact/Contact';
 import LawyerDetails from '../Pages/LawyerDetails/LawyerDetails';
+import Bookings from '../Pages/Bookings/Bookings';
 
   export const router = createBrowserRouter([
     {
@@ -18,16 +19,19 @@ import LawyerDetails from '../Pages/LawyerDetails/LawyerDetails';
             {
                 index: true,
                 path: "/",
-                loader: () => new Promise(resolve => setTimeout(resolve, 150)),
                 Component:Home,
-                loader:()=> fetch("/data.json"),
+                loader: async () => {
+                    await new Promise(resolve => setTimeout(resolve, 150));
+                    return fetch("/data.json");
+                  },
             },
             {
                 path: "/my-bookings",
-                
+                Component:Bookings,
+                loader: ()=> fetch("/data.json"),
             },
             {
-                path: "/lawyerDetails/:id",
+                path: "/lawyerDetails/:licenseNumber",
                 loader: () => fetch("/data.json"),
                 Component:LawyerDetails,
             },
@@ -39,7 +43,7 @@ import LawyerDetails from '../Pages/LawyerDetails/LawyerDetails';
             {
                 path: "/contact-us",
                 loader: () => new Promise(resolve => setTimeout(resolve, 150)),
-                element:<Contact></Contact>,
+                Component: Contact,
             },
         ]
     }

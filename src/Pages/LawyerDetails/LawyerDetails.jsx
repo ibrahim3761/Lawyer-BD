@@ -1,24 +1,27 @@
 import React from "react";
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData, useNavigate, useParams } from "react-router";
 import { PiTrademarkRegistered } from "react-icons/pi";
 import { MdErrorOutline } from "react-icons/md";
+import { addToDb } from "../../Utilities/Utilities";
 
 const LawyerDetails = () => {
-  const { id } = useParams();
-  const idnum = parseInt(id);
+  const {licenseNumber } = useParams();
   const data = useLoaderData();
-  const lawyer = data.find((lawyer) => lawyer.id === idnum);
+  const lawyer = data.find((lawyer) => String(lawyer.licenseNumber) === licenseNumber);
   const {
+    id,
     name,
     image,
     experience,
     speciality,
-    licenseNumber,
     availableDays,
     fee,
   } = lawyer;
-
-  console.log(licenseNumber);
+    const navigate = useNavigate();
+    const handleLawyer = (id) => {
+        addToDb(id);
+        navigate("/my-bookings");
+    }
   
 
   const today = new Date().toLocaleString("en-US", { weekday: "long" });
