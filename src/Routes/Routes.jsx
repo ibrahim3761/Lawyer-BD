@@ -9,6 +9,7 @@ import Blogs from '../Pages/Blogs/Blogs';
 import Contact from '../Pages/Contact/Contact';
 import LawyerDetails from '../Pages/LawyerDetails/LawyerDetails';
 import Bookings from '../Pages/Bookings/Bookings';
+import LawyerDetailsError from '../Pages/LawyerDetailsError/LawyerDetailsError';
 
   export const router = createBrowserRouter([
     {
@@ -32,8 +33,12 @@ import Bookings from '../Pages/Bookings/Bookings';
             },
             {
                 path: "/lawyerDetails/:licenseNumber",
-                loader: () => fetch("/data.json"),
+                loader: async () => {
+                    await new Promise(resolve => setTimeout(resolve, 150));
+                    return fetch("/data.json");
+                  },
                 Component:LawyerDetails,
+                errorElement:<LawyerDetailsError></LawyerDetailsError>
             },
             {
                 path: "/blogs",

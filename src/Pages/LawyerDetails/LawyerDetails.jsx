@@ -3,6 +3,7 @@ import { useLoaderData, useNavigate, useParams } from "react-router";
 import { PiTrademarkRegistered } from "react-icons/pi";
 import { MdErrorOutline } from "react-icons/md";
 import { addToDb } from "../../Utilities/Utilities";
+import { ToastContainer, toast, Bounce } from 'react-toastify';
 
 const LawyerDetails = () => {
   const {licenseNumber } = useParams();
@@ -17,17 +18,57 @@ const LawyerDetails = () => {
     availableDays,
     fee,
   } = lawyer;
-    const navigate = useNavigate();
-    const handleLawyer = (id) => {
-        addToDb(id);
-        navigate("/my-bookings");
+
+  const navigate = useNavigate();
+
+  const handleLawyer = (id, name) => {
+    const added = addToDb(id);
+    if (added) {
+        toast.success(`Appointment scheduled for ${name} successfully.`, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
+
+        setTimeout(() => {
+            navigate("/my-bookings");
+        }, 2100);
+    } else {
+        toast.warn("Appointment is already scheduled for today.", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
-  
+};
 
   const today = new Date().toLocaleString("en-US", { weekday: "long" });
   const isAvailable = availableDays.includes(today);
 
   return (
+    <>
+    <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+    />
     <div className="bg-[#EFEFEF] lg:px-10 px-5 lg:py-10 py-5">
       <div className="text-center space-y-3 lg:space-y-5 bg-white rounded-2xl lg:p-10 p-5">
         <h1 className="text-3xl font-bold">Lawyer’s Profile Details</h1>
@@ -102,11 +143,12 @@ const LawyerDetails = () => {
           </p>
         </div>
 
-        <button onClick={() => handleLawyer(id)} className="btn transition rounded-full bg-green-600 text-white hover:bg-white hover:text-green-600 duration-300 hover:border-2 hover:border-green-600">
+        <button onClick={() => handleLawyer(id,name)} className="btn transition rounded-full bg-green-600 text-white hover:bg-white hover:text-green-600 duration-300 hover:border-2 hover:border-green-600">
           Book Appointment Now
         </button>
       </div>
     </div>
+    </>
   );
 };
 

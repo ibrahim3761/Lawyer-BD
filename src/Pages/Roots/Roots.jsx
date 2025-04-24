@@ -2,6 +2,7 @@ import React from 'react';
 import Nabvar from '../../Components/Header/Nabvar';
 import { Outlet,  useNavigation } from 'react-router';
 import Footer from '../../Components/Footer/Footer';
+import ScrollUp from '../../Components/ScrollUp/ScrollUp';
 
 const Roots = () => {
     const navigation = useNavigation();
@@ -10,6 +11,8 @@ const Roots = () => {
         
         
         <div>
+            <ScrollUp></ScrollUp>
+
             <Nabvar></Nabvar>
             {isLoading && (
                 <div className='w-full flex justify-center bg-[#EFEFEF] items-center py-10'>
