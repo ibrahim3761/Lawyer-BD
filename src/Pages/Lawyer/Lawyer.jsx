@@ -13,7 +13,7 @@ const Lawyer = ({ lawyer }) => {
   } = lawyer;
   return (
     <div>
-      <div class="flex gap-6 bg-base-100  shadow-sm p-4">
+      <div class="flex md:flex-row flex-col justify-center items-center gap-6 bg-base-100  shadow-sm p-4 rounded-lg">
         <div>
           <img
             src={image}
