@@ -24,21 +24,21 @@ const LawyerDetails = () => {
   const handleLawyer = (id, name) => {
     const added = addToDb(id);
     if (added) {
-        toast.success(`Appointment scheduled for ${name} successfully.`, {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-        });
+      toast.success(`Appointment scheduled for ${name} successfully.`, {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+    });
 
-        setTimeout(() => {
+       setTimeout(() => {
             navigate("/my-bookings");
-        }, 2100);
+        }, 2500); 
     } else {
         toast.warn("Appointment is already scheduled for today.", {
             position: "top-right",
@@ -49,6 +49,7 @@ const LawyerDetails = () => {
             draggable: true,
             progress: undefined,
             theme: "light",
+            transition: Bounce,
         });
     }
 };
@@ -68,7 +69,7 @@ const LawyerDetails = () => {
                 draggable
                 pauseOnHover
                 theme="light"
-    />
+            />
     <div className="bg-[#EFEFEF] lg:px-10 px-5 lg:py-10 py-5">
       <div className="text-center space-y-3 lg:space-y-5 bg-white rounded-2xl lg:p-10 p-5">
         <h1 className="text-3xl font-bold">Lawyer’s Profile Details</h1>
@@ -129,13 +130,13 @@ const LawyerDetails = () => {
             }`}
           >
             {isAvailable
-              ? "Doctor Available Today"
-              : "Doctor Unavailable Today"}
+              ? "Lawyer Available Today"
+              : "Lawyer Unavailable Today"}
           </p>
         </div>
 
         <div className="pb-5">
-          <p className="text-sm font-semibold px-2 py-1 rounded-full text-[#FFA000] bg-orange-50 flex gap-2 justify-center">
+          <p className="text-sm font-semibold px-2 py-1 rounded-full text-[#FFA000] bg-orange-50 flex flex-col items-center md:flex-row gap-2 justify-center ">
             <MdErrorOutline size={20} />
             {isAvailable
               ? `Due to high client volume, we are currently accepting appointments for today. We appreciate your understanding and cooperation.`
@@ -143,9 +144,17 @@ const LawyerDetails = () => {
           </p>
         </div>
 
-        <button onClick={() => handleLawyer(id,name)} className="btn transition rounded-full bg-green-600 text-white hover:bg-white hover:text-green-600 duration-300 hover:border-2 hover:border-green-600">
-          Book Appointment Now
-        </button>
+        <button 
+  onClick={() => handleLawyer(id, name)} 
+  disabled={!isAvailable}
+  className={`btn transition rounded-full 
+    ${isAvailable 
+      ? "bg-green-600 text-white hover:bg-white hover:text-green-600 hover:border-2 hover:border-green-600" 
+      : "bg-gray-300 text-gray-500 cursor-not-allowed"} 
+    duration-300`}>
+  Book Appointment Now
+</button>
+
       </div>
     </div>
     </>

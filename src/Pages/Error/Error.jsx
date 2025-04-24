@@ -14,7 +14,7 @@ const Error = () => {
         <p>Oops! The page you are looking for doesn't exist</p>
         <Link to={"/"}><button
           type="button"
-          className="btn btn-outline-primary"
+          className="btn btn-outline-primary bg-green-500"
         >
           Go Back Home
         </button></Link>

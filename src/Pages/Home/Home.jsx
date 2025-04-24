@@ -32,7 +32,7 @@ const Home = () => {
             <h2 className="text-5xl font-bold text-gray-900 mb-1">
               <CountUp end={199} suffix="+" duration={5} />
             </h2>
-            <p className="text-gray-500">Total Doctors</p>
+            <p className="text-gray-500">Total Lawyers</p>
           </div>
 
           {/* Total Reviews Card */}
@@ -58,7 +58,7 @@ const Home = () => {
             <h2 className="text-5xl font-bold text-gray-900 mb-1">
               <CountUp end={1900} suffix="+" duration={5} />
             </h2>
-            <p className="text-gray-500">Patients</p>
+            <p className="text-gray-500">Case inititated</p>
           </div>
 
           {/* Total Staffs Card */}

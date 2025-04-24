@@ -14,4 +14,10 @@ const addToDb = (id) => {
     }
 };
 
-export { addToDb, getStoredBooking };
+const removeFromDb = (id) => {
+    const storedBooking = getStoredBooking();
+    const updatedBookings = storedBooking.filter((booking) => booking !== id);
+    localStorage.setItem('bookinglist', JSON.stringify(updatedBookings));
+}
+
+export { addToDb, getStoredBooking,removeFromDb };
