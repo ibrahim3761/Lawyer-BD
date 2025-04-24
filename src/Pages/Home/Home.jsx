@@ -13,8 +13,8 @@ const Home = () => {
       <Banner></Banner>
       <Lawyers></Lawyers>
       <div className="my-10 lg:px-10">
-        <div className="text-center">
-          <h1>We Provide Best Law Services</h1>
+        <div className="text-center px-3">
+          <h1 className="lg:text-4xl pb-2 text-2xl font-bold">We Provide Best Law Services</h1>
           <p>
             Our platform connects you with verified, experienced Lawyers across
             various specialities — all at your convenience.
